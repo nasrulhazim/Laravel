@@ -20,5 +20,5 @@ add into Console/kernel for registering
 ```
 
 ```
-usage : php artisan make:view <page name> <page path (optional)> <content (optional)>
+usage : php artisan make:view example.blade.php --path=folder --content=optional
 ```
