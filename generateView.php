@@ -32,7 +32,7 @@ class GenerateView extends Command
      *
      * @var string
      */
-    protected $description = 'Generate view for laravel.';
+    protected $description = 'create view for laravel 5.';
 
     /**
      * Create a new command instance.
@@ -63,7 +63,7 @@ class GenerateView extends Command
             return $this->info("view successfully created..");
         }
 
-        return $this->error("view not successfully created..");
+        #return $this->error("view not successfully created..");
     }
 
     protected function createViewfile($file) 
@@ -94,7 +94,7 @@ class GenerateView extends Command
                 }
             }
 
-              return $this->error("file are already exist {$full_path}");
+              return $this->info("file are already exist and replaced {$full_path}");
         }
 
         elseif($this->argument('page') === strtolower('default'))
@@ -108,7 +108,9 @@ class GenerateView extends Command
 
       
     }
-
+      /**
+       * Custom your own filling 
+       */
     protected function setContent($filling)
     {
         if($this->option('content') !== strtolower('default')) 
